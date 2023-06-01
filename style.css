@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500&display=swap');
+
+:root {
+    --shadow: hsla(0, 96%, 68%, 0.199);
+    --Desaturated-Red: hsl(0, 36%, 70%);
+    --Soft-Red: hsl(0, 93%, 68%);
+
+/* ### Neutral */
+
+    --Dark-Grayish-Red: hsl(0, 6%, 24%);
+
+/* ### Gradients */
+
+/* - Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%);
+- Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%); */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+::placeholder {
+  color: var(--Desaturated-Red);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: var(--Desaturated-Red);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: var(--Desaturated-Red);
+}
+
+header {
+    padding: 2rem;
+}
+
+header img {
+    width: 100px;
+}
+
+section {
+    margin: 2rem 0;
+}
+
+.desktop-hero-image {
+    display: none;
+}
+
+span {
+    display: block;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    letter-spacing: 10px;
+    line-height: 1;
+    color: var(--Dark-Grayish-Red);
+}
+
+span:nth-of-type(1) {
+    margin-top: 3rem;
+    color: var(--Desaturated-Red);
+    font-weight: 300;
+}
+
+p {
+    color: var(--Desaturated-Red);
+    padding: 1rem 2rem;
+    text-align: center;
+    font-size: .9rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+form {
+    padding: 0 2rem;
+    display: block;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    position: relative;
+}
+
+input {
+    width: 100%;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    border: 1px solid var(--Desaturated-Red);
+    outline: none;
+
+    -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.error-icon {
+    background-image: url(images/icon-error.svg);
+    background-repeat: no-repeat;
+    background-position: 75%;
+}
+
+input:focus {
+    border: 1.5px solid var(--Soft-Red);
+}
+
+
+button {
+    position: absolute;
+    border-radius: 25px;
+    padding: 1rem 1.7rem;
+    right: 8%;
+    
+    border: none;
+    background-image: linear-gradient(to right, hsl(0, 80%, 86%),  hsl(0, 74%, 74%));
+    box-shadow: 0 10px 10px var(--shadow);
+    -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+button:hover {
+    cursor: pointer;
+    box-shadow: 0 15px 20px var(--shadow), 0 15px 20px var(--shadow);
+}
+
+button img {
+    background: transparent;
+    height: 1rem;
+}
+
+.error-span {
+    text-align: left;
+    color: white;
+    margin: .5rem 0 0 4rem;
+    padding: 0;
+}
+
+.activate {
+    color: var(--Soft-Red);
+}
+
+/* #email and .error-span are display none on initial render */
+
+
+
+
+@media screen and (min-width:580px) {
+    main {
+        margin: auto;
+        max-width: 1200px;
+        height: 650px;
+        background-image: url(images/bg-pattern-desktop.svg);
+        background-repeat: no-repeat;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+
+        padding-left: 3rem;
+    }
+
+    header {
+        grid-row: 1;
+        grid-column: 1;
+        padding-top: 3rem;
+        padding-left: 4rem;
+        height: 5rem;
+    }
+
+    header img {
+        width: 150px;
+    }
+
+    .hero-image {
+        display: none;
+    }
+    
+    .desktop-hero-image {
+        height: 650px;
+        justify-self: right;
+        display: inline-block;
+        grid-column: 2;
+        grid-row: 1 / 2;
+    }
+
+    section {
+        justify-self: right;
+        grid-column: 1;
+        grid-row: 1 / 2;
+
+        margin-top: 6rem;
+        padding: 3rem 11rem 0 4rem; 
+    }
+
+    span {
+        font-size: 4rem;
+    }
+    
+    span, p {
+        text-align: left;
+        padding: 0;
+    }
+
+    p {
+        margin: 2rem 0;
+    }
+
+    form {
+        padding: 0;
+    }
+
+    button {
+        right: 0%;
+    }
+
+    #email {
+        background-position: 80%;
+    }
+
+    .error-span {
+        margin: .5rem 0 0 2rem;
+    }
+}
